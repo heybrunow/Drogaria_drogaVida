@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Drogaria DrogaVida - altera produto</title>
+</head>
+
+<body>
+    <div class="container">
+        <H2>Altera Produto</H2>
+        <br><br>
+        <form action="/action_page.php">
+            <label for="gsearch">Nome do produto:</label>
+            <input type="search" name="busca">
+            <input type="submit" value="Buscar">
+            <br><br>
+
+            <label for="codigo_de_barras">Código de barras:</label> <input type="text" name="codigo_de_barras">
+            <br><br>
+            <label for="nome">Nome:</label> <input type="text" name="nome">
+            <br><br>
+            <label for="descricao">Descrição:</label> <input type="text" name="descricao">
+            <br><br>
+            <label for="validade">Validade:</label> <input type="text" i name="validade">
+            <br><br>
+            <label for="marca">Marca:</label> <input type="text" name="marca">
+            <br><br>
+            <label for="number">Quantidade:</label> <input type="number" name="quantidade_em_estoque" min="1">
+            <br><br>
+            <label for="valor">Valor:</label> <input type="number" name="valor" min="0">
+            <br><br>
+            <label for="status">Tornar indisponível:</label> <input type="checkbox" name="valor"
+                class="check_torna_indisponivel">
+
+            <br><br>
+            <a href="operador.html"><input type="button" value="Voltar" class="botao_cadastra_produto"></a>
+            <input type="submit" value="Alterar" class="botao_cadastra_produto">
+        </form>
+    </div>
+</body>
+
+</html>
