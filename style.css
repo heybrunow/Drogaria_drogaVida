@@ -60,6 +60,19 @@ body{
           height: 35px;
       }
 
+      /** tabela **/
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      th {
+        background-color: white;
+        color: black;
+      }
+
+
+
 
 
 
