@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_DROGAVIDAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="cpf_c" />
+    </Key>
+    <Property Name="nome" Type="varchar" MaxLength="255" />
+    <Property Name="cpf_c" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="senha" Type="varchar" MaxLength="255" />
+    <Property Name="tel" Type="varchar" MaxLength="255" />
+    <Property Name="endereco" Type="varchar" MaxLength="255" />
+    <Property Name="datanas" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="operador">
+    <Key>
+      <PropertyRef Name="cpf_o" />
+    </Key>
+    <Property Name="nome" Type="varchar" MaxLength="255" />
+    <Property Name="cpf_o" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="senha" Type="varchar" MaxLength="255" />
+    <Property Name="tel" Type="varchar" MaxLength="255" />
+    <Property Name="endereco" Type="varchar" MaxLength="255" />
+    <Property Name="datanas" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="pedido">
+    <Key>
+      <PropertyRef Name="Id_pedido" />
+    </Key>
+    <Property Name="Id_pedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="valor" Type="float" />
+    <Property Name="receita" Type="varbinary(max)" />
+    <Property Name="mdp" Type="varchar" MaxLength="255" />
+    <Property Name="hdp" Type="datetime" />
+    <Property Name="qdadproduto" Type="int" />
+    <Property Name="cpf_c" Type="varchar" MaxLength="255" />
+    <Property Name="cpf_o" Type="varchar" MaxLength="255" />
+    <Property Name="Id_produto" Type="int" />
+    <Property Name="Id_aprovacao" Type="int" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="Id_produto" />
+    </Key>
+    <Property Name="Id_produto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="255" />
+    <Property Name="cod_barra" Type="varchar" MaxLength="255" />
+    <Property Name="descricao" Type="varchar" MaxLength="255" />
+    <Property Name="validade" Type="date" />
+    <Property Name="marca" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="qda_estoque" Type="int" />
+    <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="valor" Type="float" />
+  </EntityType>
+  <EntityType Name="receita">
+    <Key>
+      <PropertyRef Name="Id_aprovacao" />
+    </Key>
+    <Property Name="Id_aprovacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status_receita" Type="bit" />
+    <Property Name="receita" Type="varbinary(max)" />
+    <Property Name="cpf_o" Type="varchar" MaxLength="255" />
+    <Property Name="Id_pedido" Type="int" />
+  </EntityType>
+  <Association Name="FK__pedido__cpf_c__2B3F6F97">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="cpf_c" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="cpf_c" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pedido__cpf_o__2C3393D0">
+    <End Role="operador" Type="Self.operador" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operador">
+        <PropertyRef Name="cpf_o" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="cpf_o" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__pedido__Id_aprov__2A4B4B5E">
+    <End Role="produto" Type="Self.produto" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="Id_produto" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="Id_produto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__receita__cpf_o__2F10007B">
+    <End Role="operador" Type="Self.operador" Multiplicity="0..1" />
+    <End Role="receita" Type="Self.receita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="operador">
+        <PropertyRef Name="cpf_o" />
+      </Principal>
+      <Dependent Role="receita">
+        <PropertyRef Name="cpf_o" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__receita__Id_pedi__300424B4">
+    <End Role="pedido" Type="Self.pedido" Multiplicity="0..1" />
+    <End Role="receita" Type="Self.receita" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pedido">
+        <PropertyRef Name="Id_pedido" />
+      </Principal>
+      <Dependent Role="receita">
+        <PropertyRef Name="Id_pedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pedido_ibfk_4">
+    <End Role="receita" Type="Self.receita" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="receita">
+        <PropertyRef Name="Id_aprovacao" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="Id_aprovacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_DROGAVIDAModelStoreContainer">
+    <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="operador" EntityType="Self.operador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pedido" EntityType="Self.pedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="produto" EntityType="Self.produto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="receita" EntityType="Self.receita" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__pedido__cpf_c__2B3F6F97" Association="Self.FK__pedido__cpf_c__2B3F6F97">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pedido__cpf_o__2C3393D0" Association="Self.FK__pedido__cpf_o__2C3393D0">
+      <End Role="operador" EntitySet="operador" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__pedido__Id_aprov__2A4B4B5E" Association="Self.FK__pedido__Id_aprov__2A4B4B5E">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__receita__cpf_o__2F10007B" Association="Self.FK__receita__cpf_o__2F10007B">
+      <End Role="operador" EntitySet="operador" />
+      <End Role="receita" EntitySet="receita" />
+    </AssociationSet>
+    <AssociationSet Name="FK__receita__Id_pedi__300424B4" Association="Self.FK__receita__Id_pedi__300424B4">
+      <End Role="pedido" EntitySet="pedido" />
+      <End Role="receita" EntitySet="receita" />
+    </AssociationSet>
+    <AssociationSet Name="pedido_ibfk_4" Association="Self.pedido_ibfk_4">
+      <End Role="receita" EntitySet="receita" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
