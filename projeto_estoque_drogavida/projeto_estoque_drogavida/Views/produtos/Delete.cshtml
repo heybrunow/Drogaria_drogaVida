@@ -1,0 +1,104 @@
+﻿@model projeto_estoque_drogavida.produto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Deletar</h2>
+
+<h3>Você tem certeza que deseja deletar esse produto?</h3>
+<div>
+    <h4>produto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cod_barra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cod_barra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.validade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.validade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status_produto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status_produto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qda_estoque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qda_estoque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unidade_de_medida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unidade_de_medida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dosagem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dosagem)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a lista", "Index")
+        </div>
+    }
+</div>

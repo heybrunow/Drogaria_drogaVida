@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_drogavida_estoqueModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="operador">
+    <Key>
+      <PropertyRef Name="cpf_o" />
+    </Key>
+    <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cpf_o" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="senha" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="tel" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="endereco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="data_de_nascimento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="Id_produto" />
+    </Key>
+    <Property Name="Id_produto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="cod_barra" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="validade" Type="DateTime" Precision="0" />
+    <Property Name="marca" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status_produto" Type="Boolean" />
+    <Property Name="qda_estoque" Type="Int32" />
+    <Property Name="valor" Type="Double" />
+    <Property Name="unidade_de_medida" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="dosagem" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="db_drogavida_estoqueEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="operador" EntityType="Self.operador" />
+    <EntitySet Name="produto" EntityType="Self.produto" />
+  </EntityContainer>
+</Schema>

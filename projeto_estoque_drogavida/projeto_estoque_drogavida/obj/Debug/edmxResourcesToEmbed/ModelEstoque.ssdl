@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_drogavida_estoqueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="operador">
+    <Key>
+      <PropertyRef Name="cpf_o" />
+    </Key>
+    <Property Name="nome" Type="varchar" MaxLength="255" />
+    <Property Name="cpf_o" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="senha" Type="varchar" MaxLength="255" />
+    <Property Name="tel" Type="varchar" MaxLength="255" />
+    <Property Name="endereco" Type="varchar" MaxLength="255" />
+    <Property Name="data_de_nascimento" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="Id_produto" />
+    </Key>
+    <Property Name="Id_produto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="255" />
+    <Property Name="cod_barra" Type="varchar" MaxLength="255" />
+    <Property Name="descricao" Type="varchar" MaxLength="255" />
+    <Property Name="validade" Type="date" />
+    <Property Name="marca" Type="varchar" MaxLength="255" />
+    <Property Name="status_produto" Type="bit" />
+    <Property Name="qda_estoque" Type="int" />
+    <Property Name="valor" Type="float" />
+    <Property Name="unidade_de_medida" Type="varchar" MaxLength="15" />
+    <Property Name="dosagem" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityContainer Name="db_drogavida_estoqueModelStoreContainer">
+    <EntitySet Name="operador" EntityType="Self.operador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="produto" EntityType="Self.produto" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

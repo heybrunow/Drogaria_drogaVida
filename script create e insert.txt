@@ -1,0 +1,132 @@
+create database db_drogavida_estoque
+
+use db_drogavida_estoque
+
+
+
+create table produto (
+Id_produto int not null PRIMARY KEY IDENTITY(1,1) ,
+nome  varchar(255),
+unidade_de_medida varchar(255),
+dosagem varchar(255),
+cod_barra varchar (255),
+descricao varchar (255),
+validade date,
+marca varchar (255),
+status_produto BIT,
+qda_estoque int,
+valor float,
+);
+
+select *from produto
+
+create table operador(
+nome varchar(255),
+cpf_o varchar(255) not null PRIMARY KEY,
+email varchar(255),
+senha varchar(255),
+tel varchar(255),
+endereco varchar(255),
+data_de_nascimento varchar (255),
+
+);
+
+
+select *from operador
+
+select * from produto
+
+insert into operador(nome,cpf_o,email,senha,tel,endereco,data_de_nascimento)values('Tester', 321,'Tester@teste.com','abc','953652806','avenida adelino cardana 293','13/12/2000')
+
+
+insert into operador(nome,cpf_o,email,senha,tel,endereco,data_de_nascimento)values('Tester', 321,'brunosouto@outlook.com','13012001','953652806','avenida adelino cardana 293','13/12/2000')
+
+insert into operador(nome,cpf_o,email,senha,tel,endereco,data_de_nascimento)values('Bruno souto', 259863,'brunosouto@outlook.com','13012001','953652806','avenida adelino cardana 293','13/12/2000')
+
+insert into operador(nome,cpf_o,email,senha,tel,endereco,data_de_nascimento)values('Gustavo pego', 7589632,'gustavo.pego@outlook.com','141325','963541236','alameda olga,santa cecilia 300','14/07/1998')
+
+insert into operador(nome,cpf_o,email,senha,tel,endereco,data_de_nascimento)values('gabriel dos santos guerra', 2547836,'gabrielguerra87@outlook.com','141225','41686089','rua pompeia numero 347 chacara marco barueri','22/05/2001')
+
+insert into operador(nome,cpf_o,email,senha,tel,endereco,data_de_nascimento)values('stefanny silva', 25875698,'stefanny@outlook.com','252421','9636355','alameda araguai parque dos camargos','24/05/2001')
+
+
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Dipirona Ems 500mg
+Gotas 20ml','20ml','500mg','7896004769196
+','A Dipirona Sódica é à base de dipirona, utilizado no tratamento da dor e febre. Os efeitos analgésico e antitérmico podem ser esperados em 30 a 60 minutos após a administração e geralmente persistem por aproximadamente 4 horas.',
+'12/10/2023',1,'EMS',25,12.50)
+
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Neosaldina 20 
+Drágeas','20comprimidos','500ml','7896641810695
+','Neosaldina é um medicamento com atividade analgésica (diminui a dor) e antiespasmódica (diminui contração involuntária) indicado para o tratamento de diversos tipos de dor de cabeça, incluindo enxaquecas ou para o tratamento de cólicas',
+'24/10/2022',1,'MARCK',45,9.50)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Cetoconazol 30g
+Creme','30g','creme','7898075315982
+','O princípio ativo cetoconazol possui potente atividade antimicótica (que combate a micose), agindo rapidamente no prurido (coceira) proveniente de tais infecções. O controle dos sintomas é observado progressivamente com o decorrer do tratamento.',
+'05/06/2022',1,'cimed',20,12.50)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Oto- Xilodase
+8ml Apsen','8ml','50ml','7896637022439','O Oto-Xtlodase é uma solução antiinfecciosa e anestésica local, para instilar no ouvido, nos casos de otite. Departamento: Saúde. Produto: Medicamento.',
+'11/08/2023',1,'apsen',40,15.50)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Laxente 6 comprimidos ','6 comprimidos','50ml','7896094903234',
+'Lacto-Purga é indicado para o tratamento da prisão de ventre; no preparo do paciente para exames diagnósticos, e antes ou após procedimentos cirúrgicos.',
+'25/01/2022',1,'lactopurga',20,5.50)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Oto- Xilodase 8ml Apsen','8ml','50g','7896637022439','O Oto-Xtlodase é uma solução antiinfecciosa e anestésica local, para instilar no ouvido, nos casos de otite. Departamento: Saúde. Produto: Medicamento.',
+'11/08/2023',1,'apsen',40,15.50)
+
+
+insert into produto (nome, unidade_de_medida,dosagem,cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Domperidona Ems 10mg com 30 
+comprimidos
+','10mg','30 comprimidos','7896004723563','A Domperidona é um medicamento utilizado no tratamento da má digestão, tornando mais rápida a movimentação dos alimentos no esôfago, estômago e intestinos.',
+'25/11/2023',1,'ems',10,7.50)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('dipirona
+monohidratada 300mg
+','300mg','50ml','7896714269955','O que é miorrelax possui ação analgésica e relaxante muscular. o início da ação ocorre a partir de 30 minutos. para que serve miorrelax é indicado no alívio da dor associada a contraturas musculares',
+'28/01/2023',1,'mirrelax',20,4.50)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Pantoprazol 
+40mg Com 28 Comprimidos Legrand
+','40mg','28 comprimidos','7894916140393','Este medicamento reduz a acidez estomacal, aliviando os sintomas causados por essa acidez em casos de gastrites ou gastroduodenites agudas ou crônicas, dispepsia não ulcerosa e doença por refluxo gastroesofágico.',
+'19/07/2023',1,'legrand',10,15.90)
+
+insert into produto (nome,unidade_de_medida,dosagem,cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Multigrip 
+20 Cápsulas','50ml','20 comprimidos','7896472513208 ',
+'O MultiGrip é indicado no tratamento dos sintomas de gripes e resfriados. Destinado ao alívio da congestão nasal, coriza, febre, dor de cabeça e dores musculares presentes nos estados gripais',
+'07/07/2021',1,'multigrip',200,17.90)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Nervocalm 
+20 Comprimidos 250mg','250mg','20 comprimidos','7896677704890 ',
+'Nervocalm é um medicamento indicado para auxiliar no tratamento da ansiedade (angústia), nervosismo e irritabilidade.',
+'10/11/2022',1,'wp lab',60,25.90)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Fluoxetina 20mg
+Com 30 Comprimidos','20mg','30 comprimidos','7896004711799 ',
+'Daforin aumenta os níveis de serotonina no cérebro, resultando em melhora dos sintomas da depressão, associada ou não à ansiedade, da bulimia nervosa, do transtorno obsessivo-compulsivo (TOC) e do transtorno disfórico pré-menstrual',
+'25/05/2023',1,'teuto',20,14.90)
+
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Nimesulida 12 
+Comprimidos 100mg','100mg','12 comprimidos','7891317422028 ',
+'Nimesulida é um medicamento que apresenta propriedades que combatem a inflamação, a dor e a febre, e sua atividade anti-inflamatória envolve vários mecanismos.',
+'13/01/2023',1,'generico',40,11.90)
+
+insert into produto (nome, unidade_de_medida,dosagem,cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Band Aid Curativo
+Transparente - 40 Unidades','100ml','40 unidades','7891010504755 ',
+'O Curativo Band-Aid 40 Unidades protege o machucado e diminui o risco de infeccionar, pois fica protegido contra sujeira, germes e atrito. ',
+'22/03/2024',1,	'Johnson&Johnson ',40,16.90)
+
+insert into produto (nome, unidade_de_medida,dosagem,cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Engov - 
+24 Comprimidos','100mg','24 comprimidos','7896094907324',
+'Engov alivia os sintomas de dores de cabeça e alergias.Esse medicamento atua como analgésico (alivia as dores) e na melhora de sintomas alérgicos.',
+'25/04/2023',1,	'engov ',120,15.55)
+
+insert into produto (nome,unidade_de_medida,dosagem, cod_barra,descricao,validade,status_produto,marca,qda_estoque,valor)values('Fenobarbital 
+30 Comprimidos 100mg','100mg','30 comprimidos','7896006237372',
+'Este medicamento é destinado à prevenção do aparecimento de convulsões em indivíduos com epilepsia (doença do sistema nervoso central que causa convulsões ou ausências do paciente)',
+'02/06/2023',1,	'extrafarma',50,8.55)
+

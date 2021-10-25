@@ -1,0 +1,64 @@
+﻿@model projeto_estoque_drogavida.operador
+
+@{
+    ViewBag.Title = "Login";
+}
+<div class="row">
+    <div class="col-md-4">
+        <p>Versão do sistema 1.5</p>
+
+    </div>
+
+    <div class="col-md-4">
+        <h2>Login</h2>
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            //cria a tag do formulário
+            @Html.AntiForgeryToken() // previne o ataque CSRF
+            @Html.ValidationSummary(true)
+            if (@ViewBag.Message != null)
+            {
+                <div style="border:1px solid red">
+                    @ViewBag.Message
+                </div>
+            } 
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.cpf_o, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(model => model.cpf_o, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cpf_o, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-3">
+                        @Html.PasswordFor(model => model.senha, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <input type="submit" value="Login" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+        <div class="col-md-4">
+
+    </div>
+
+</div>
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

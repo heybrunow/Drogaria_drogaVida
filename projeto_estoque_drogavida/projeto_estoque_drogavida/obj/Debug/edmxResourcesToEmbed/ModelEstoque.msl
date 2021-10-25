@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_drogavida_estoqueModelStoreContainer" CdmEntityContainer="db_drogavida_estoqueEntities">
+    <EntitySetMapping Name="operador">
+      <EntityTypeMapping TypeName="db_drogavida_estoqueModel.operador">
+        <MappingFragment StoreEntitySet="operador">
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="cpf_o" ColumnName="cpf_o" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="data_de_nascimento" ColumnName="data_de_nascimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produto">
+      <EntityTypeMapping TypeName="db_drogavida_estoqueModel.produto">
+        <MappingFragment StoreEntitySet="produto">
+          <ScalarProperty Name="Id_produto" ColumnName="Id_produto" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="cod_barra" ColumnName="cod_barra" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="validade" ColumnName="validade" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="status_produto" ColumnName="status_produto" />
+          <ScalarProperty Name="qda_estoque" ColumnName="qda_estoque" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="unidade_de_medida" ColumnName="unidade_de_medida" />
+          <ScalarProperty Name="dosagem" ColumnName="dosagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

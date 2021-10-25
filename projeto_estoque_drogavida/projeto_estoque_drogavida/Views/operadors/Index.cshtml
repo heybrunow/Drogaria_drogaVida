@@ -1,0 +1,63 @@
+﻿@model IEnumerable<projeto_estoque_drogavida.operador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Registrar novo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_de_nascimento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.senha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_de_nascimento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cpf_o }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cpf_o }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cpf_o })
+        </td>
+    </tr>
+}
+
+</table>

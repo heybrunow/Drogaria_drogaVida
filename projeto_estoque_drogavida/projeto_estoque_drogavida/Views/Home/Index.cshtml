@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <br />
+    <div class="col-md-3">
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-2">
+            <p class="btn btn-default">@Html.ActionLink("Cadastrar Operador ", "Create", "operadors") &raquo;</p>
+            <br />
+            <br />
+            <p class="btn btn-default">@Html.ActionLink("Gerencia Produtos", "Index", "produtos") &raquo;</p>
+        </div>
+
+    </div>
+    <div class="col-md-5">
+
+        <img src="~/img/logo_pi.png" alt="logo">
+        <br />
+        <br />
+        
+    </div>
+    <div class="col-md-4">
+        <br />
+        <br />
+        <br />
+        <br />
+        <p class="btn btn-default">@Html.ActionLink("   Busca produto  ", "IndexBusca", "produtos") &raquo;</p>
+        <br />
+        <br />
+        <p class="btn btn-default">@Html.ActionLink("     Sobre nós    ", "About", "Home") &raquo;</p>
+        
+    </div>
+</div>

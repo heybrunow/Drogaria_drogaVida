@@ -1,0 +1,66 @@
+﻿@model projeto_estoque_drogavida.operador
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>operador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_de_nascimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_de_nascimento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cpf_o }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

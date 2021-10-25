@@ -1,0 +1,87 @@
+﻿@model IEnumerable<projeto_estoque_drogavida.produto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Produtos registrados</h2>
+
+<p>
+    @Html.ActionLink("Registrar novo produto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cod_barra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.validade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status_produto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qda_estoque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unidade_de_medida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dosagem)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cod_barra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricaoResumida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.validade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status_produto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qda_estoque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unidade_de_medida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dosagem)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id_produto }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.Id_produto }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.Id_produto })
+        </td>
+    </tr>
+}
+
+</table>
