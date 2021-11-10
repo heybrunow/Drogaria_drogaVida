@@ -7,10 +7,10 @@
 <h2>Produto</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>produto</h4>
         <hr />
@@ -104,6 +104,7 @@
         </div>
     </div>
 }
+@Html.ActionLink("Voltar a lista", "Index")
 
 <div>
 </div>
